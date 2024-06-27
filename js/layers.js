@@ -46,7 +46,3 @@ addLayer("a", {
     ],
     layerShown(){return true},
 })
-// For players
-setInterval(()=>{
-	player.a.points = player.points
-}, 33)
