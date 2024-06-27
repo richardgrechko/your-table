@@ -657,7 +657,6 @@ function loadVue() {
 			ctrlDown,
 			run,
 			gridRun,
-			displayFormula,
 			displayIntFormula,
 			
             getPointsDisplay
