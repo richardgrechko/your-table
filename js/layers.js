@@ -50,6 +50,8 @@ addLayer("a", {
     ],
 	upgrades: {
 		11: {
+			rows: 1,
+			cols: 1,
 			name: "bla",
 			description: "i dont know what i am doing",
 			cost: new Decimal(10),
