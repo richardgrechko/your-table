@@ -28,7 +28,7 @@ addLayer("a", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#100000",
+    color: "#FF0000",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "a", // Name of prestige currency
     resourceEN: "a", // The second name of prestige currency ( If you open otherLanguageMod )
