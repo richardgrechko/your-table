@@ -46,6 +46,6 @@ addLayer("a", {
     ],
 	automate() {
 		player.a.points = player.points
-	}
+	},
     layerShown(){return true},
 })
