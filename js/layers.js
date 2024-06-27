@@ -32,7 +32,9 @@ addLayer("a", {
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "a", // Name of prestige currency
     resourceEN: "a", // The second name of prestige currency ( If you open otherLanguageMod )
-    type: "none", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    baseResource: "points", 
+    baseAmount() {return player.points}, 
+    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
