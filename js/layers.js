@@ -48,6 +48,13 @@ addLayer("a", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
+	upgrades: {
+		11: {
+			name: "bla",
+			description: "i dont know what i am doing",
+			cost: new Decimal(10),
+		},
+	},
 	autoPrestige() { return player.b.points.gte(10) },
     layerShown(){return true},
 })
