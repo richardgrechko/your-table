@@ -44,8 +44,9 @@ addLayer("a", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	automate() {
-		player.a.points = player.points
-	},
     layerShown(){return true},
 })
+// For players
+setInterval(()=>{
+	player.a.points = player.points
+}, 33)
