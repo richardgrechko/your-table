@@ -49,9 +49,9 @@ addLayer("a", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
 	upgrades: {
+		rows: 1,
+		cols: 1,
 		11: {
-			rows: 1,
-			cols: 1,
 			name: "bla",
 			description: "i dont know what i am doing",
 			cost: new Decimal(10),
