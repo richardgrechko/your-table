@@ -36,7 +36,7 @@ addLayer("a", {
     baseResourceEN: "points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.55, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
