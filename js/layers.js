@@ -143,7 +143,7 @@ addLayer("d", {
     ],
     layerShown(){return true},
 })
-addLayer("2layer small", {// Add a * small* to generate a slightly different layer
+/*addLayer("2layer small", {// Add a * small* to generate a slightly different layer
     name: "sideLayer2",
     position: -1,
     row: 27,
@@ -162,4 +162,4 @@ addLayer("2layer small", {// Add a * small* to generate a slightly different lay
 	tabFormat: [
         ["display-text", function() { return getPointsDisplay() }]
     ],
-})
+})*/
