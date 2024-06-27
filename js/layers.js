@@ -68,7 +68,7 @@ addLayer("b", {
     baseResourceEN: "a", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.a.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -100,7 +100,7 @@ addLayer("c", {
     baseResourceEN: "b", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.b.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -132,7 +132,7 @@ addLayer("d", {
     baseResourceEN: "c", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.c.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -164,7 +164,7 @@ addLayer("e", {
     baseResourceEN: "d", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.d.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.45, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -196,7 +196,7 @@ addLayer("f", {
     baseResourceEN: "e", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.e.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.45, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -228,7 +228,7 @@ addLayer("g", {
     baseResourceEN: "f", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.f.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.45, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -260,7 +260,7 @@ addLayer("h", {
     baseResourceEN: "g", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.g.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.45, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -292,7 +292,7 @@ addLayer("i", {
     baseResourceEN: "h", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.h.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.4, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -324,7 +324,7 @@ addLayer("j", {
     baseResourceEN: "i", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.i.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.4, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -356,7 +356,7 @@ addLayer("k", {
     baseResourceEN: "j", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.j.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.4, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -388,7 +388,7 @@ addLayer("l", {
     baseResourceEN: "k", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.k.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.4, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -420,7 +420,7 @@ addLayer("m", {
     baseResourceEN: "l", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.l.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.4, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -452,7 +452,7 @@ addLayer("n", {
     baseResourceEN: "m", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.m.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.4, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -484,7 +484,7 @@ addLayer("o", {
     baseResourceEN: "n", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.n.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.35, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -516,7 +516,7 @@ addLayer("p", {
     baseResourceEN: "o", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.o.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.35, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -548,7 +548,7 @@ addLayer("q", {
     baseResourceEN: "p", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.p.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.35, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -580,7 +580,7 @@ addLayer("r", {
     baseResourceEN: "q", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.q.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.35, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -612,7 +612,7 @@ addLayer("s", {
     baseResourceEN: "r", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.r.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.35, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -644,7 +644,7 @@ addLayer("t", {
     baseResourceEN: "s", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.s.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.35, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -676,7 +676,7 @@ addLayer("u", {
     baseResourceEN: "t", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.t.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.3, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -708,7 +708,7 @@ addLayer("v", {
     baseResourceEN: "u", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.u.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.3, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -740,7 +740,7 @@ addLayer("w", {
     baseResourceEN: "v", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.c.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.3, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -772,7 +772,7 @@ addLayer("x", {
     baseResourceEN: "w", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.w.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.3, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -804,7 +804,7 @@ addLayer("y", {
     baseResourceEN: "x", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.x.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.25, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -836,7 +836,7 @@ addLayer("z", {
     baseResourceEN: "y", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.y.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.25, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -889,7 +889,7 @@ addLayer("a2", {
     baseResourceEN: "z", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.z.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.9, // Prestige currency exponent
+    exponent: 0.25, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
