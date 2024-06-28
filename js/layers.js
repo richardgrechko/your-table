@@ -40,6 +40,10 @@ addLayer("a", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
 	    if (hasUpgrade("a", 11)) mult = mult.mul(new Decimal(2))
+	    if (hasUpgrade("a", 12)) mult = mult.mul(new Decimal(3))
+	    if (hasUpgrade("a", 13)) mult = mult.mul(new Decimal(5))
+	    if (hasUpgrade("a", 14)) mult = mult.mul(new Decimal(10))
+	    if (hasUpgrade("a", 15)) mult = mult.mul(new Decimal(20))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -59,8 +63,36 @@ addLayer("a", {
 			descriptionEN: "x2 a gain",
 			cost: new Decimal(10),
 		},
+		12: {
+			title: "bla",
+			titleEN: "bla",
+			description: "x3a增益",
+			descriptionEN: "x3 a gain",
+			cost: new Decimal(100),
+		},
+		13: {
+			title: "bla",
+			titleEN: "bla",
+			description: "x5a增益",
+			descriptionEN: "x5 a gain",
+			cost: new Decimal(1000),
+		},
+		14: {
+			title: "bla",
+			titleEN: "bla",
+			description: "x10a增益",
+			descriptionEN: "x10 a gain",
+			cost: new Decimal(10000),
+		},
+		15: {
+			title: "bla",
+			titleEN: "bla",
+			description: "x20a增益",
+			descriptionEN: "x20 a gain",
+			cost: new Decimal(100000),
+		},
 	},
-	passiveGeneration() { return player.b.points.gte(10) },
+	passiveGeneration() { return hasUpgrade("b", 11) },
     layerShown(){return true},
 })
 addLayer("b", {
@@ -73,7 +105,7 @@ addLayer("b", {
 		points: new Decimal(0),
     }},
     color: "#FF1000",
-    requires: new Decimal(100 * (1.1 ** 0)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 0)), // Can be a function that takes requirement increases into account
     resource: "b", // Name of prestige currency
     resourceEN: "b", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "a", // Name of resource prestige is based on
@@ -92,6 +124,24 @@ addLayer("b", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
+	upgrades: {
+		rows: 1,
+		cols: 1,
+		11: {
+			title: "自動化",
+			titleEN: "Automation",
+			description: "自動化您的a",
+			descriptionEN: "Automate your a",
+			cost: new Decimal(10),
+		},
+		12: {
+			title: "自動化",
+			titleEN: "Automation",
+			description: "自動購買a升級",
+			descriptionEN: "Auto buy a upgrades",
+			cost: new Decimal(100),
+		},
+	},
 	passiveGeneration() { return player.c.points.gte(10) },
     layerShown(){return true},
 })
@@ -105,7 +155,7 @@ addLayer("c", {
 		points: new Decimal(0),
     }},
     color: "#FF2000",
-    requires: new Decimal(100 * (1.1 ** 1)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 1)), // Can be a function that takes requirement increases into account
     resource: "c", // Name of prestige currency
     resourceEN: "c", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "b", // Name of resource prestige is based on
@@ -137,7 +187,7 @@ addLayer("d", {
 		points: new Decimal(0),
     }},
     color: "#FF3000",
-    requires: new Decimal(100 * (1.1 ** 2)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 2)), // Can be a function that takes requirement increases into account
     resource: "d", // Name of prestige currency
     resourceEN: "d", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "c", // Name of resource prestige is based on
@@ -169,7 +219,7 @@ addLayer("e", {
 		points: new Decimal(0),
     }},
     color: "#FF4000",
-    requires: new Decimal(100 * (1.1 ** 3)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 3)), // Can be a function that takes requirement increases into account
     resource: "e", // Name of prestige currency
     resourceEN: "e", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "d", // Name of resource prestige is based on
@@ -201,7 +251,7 @@ addLayer("f", {
 		points: new Decimal(0),
     }},
     color: "#FF5000",
-    requires: new Decimal(100 * (1.1 ** 4)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 4)), // Can be a function that takes requirement increases into account
     resource: "f", // Name of prestige currency
     resourceEN: "f", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "e", // Name of resource prestige is based on
@@ -233,7 +283,7 @@ addLayer("g", {
 		points: new Decimal(0),
     }},
     color: "#FF6000",
-    requires: new Decimal(100 * (1.1 ** 5)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 5)), // Can be a function that takes requirement increases into account
     resource: "g", // Name of prestige currency
     resourceEN: "g", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "f", // Name of resource prestige is based on
@@ -265,7 +315,7 @@ addLayer("h", {
 		points: new Decimal(0),
     }},
     color: "#FF7000",
-    requires: new Decimal(100 * (1.1 ** 6)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 6)), // Can be a function that takes requirement increases into account
     resource: "h", // Name of prestige currency
     resourceEN: "h", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "g", // Name of resource prestige is based on
@@ -297,7 +347,7 @@ addLayer("i", {
 		points: new Decimal(0),
     }},
     color: "#FF8000",
-    requires: new Decimal(100 * (1.1 ** 7)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 7)), // Can be a function that takes requirement increases into account
     resource: "i", // Name of prestige currency
     resourceEN: "i", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "h", // Name of resource prestige is based on
@@ -329,7 +379,7 @@ addLayer("j", {
 		points: new Decimal(0),
     }},
     color: "#FF9000",
-    requires: new Decimal(100 * (1.1 ** 8)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 8)), // Can be a function that takes requirement increases into account
     resource: "j", // Name of prestige currency
     resourceEN: "j", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "i", // Name of resource prestige is based on
@@ -361,7 +411,7 @@ addLayer("k", {
 		points: new Decimal(0),
     }},
     color: "#FFA000",
-    requires: new Decimal(100 * (1.1 ** 9)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 9)), // Can be a function that takes requirement increases into account
     resource: "k", // Name of prestige currency
     resourceEN: "k", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "j", // Name of resource prestige is based on
@@ -393,7 +443,7 @@ addLayer("l", {
 		points: new Decimal(0),
     }},
     color: "#FFB000",
-    requires: new Decimal(100 * (1.1 ** 10)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 10)), // Can be a function that takes requirement increases into account
     resource: "l", // Name of prestige currency
     resourceEN: "l", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "k", // Name of resource prestige is based on
@@ -425,7 +475,7 @@ addLayer("m", {
 		points: new Decimal(0),
     }},
     color: "#FFC000",
-    requires: new Decimal(100 * (1.1 ** 11)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 11)), // Can be a function that takes requirement increases into account
     resource: "m", // Name of prestige currency
     resourceEN: "m", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "l", // Name of resource prestige is based on
@@ -457,7 +507,7 @@ addLayer("n", {
 		points: new Decimal(0),
     }},
     color: "#FFD000",
-    requires: new Decimal(100 * (1.1 ** 12)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 12)), // Can be a function that takes requirement increases into account
     resource: "n", // Name of prestige currency
     resourceEN: "n", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "m", // Name of resource prestige is based on
@@ -489,7 +539,7 @@ addLayer("o", {
 		points: new Decimal(0),
     }},
     color: "#FFE000",
-    requires: new Decimal(100 * (1.1 ** 13)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 13)), // Can be a function that takes requirement increases into account
     resource: "o", // Name of prestige currency
     resourceEN: "o", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "n", // Name of resource prestige is based on
@@ -521,7 +571,7 @@ addLayer("p", {
 		points: new Decimal(0),
     }},
     color: "#FFF000",
-    requires: new Decimal(100 * (1.1 ** 14)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 14)), // Can be a function that takes requirement increases into account
     resource: "p", // Name of prestige currency
     resourceEN: "p", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "o", // Name of resource prestige is based on
@@ -553,7 +603,7 @@ addLayer("q", {
 		points: new Decimal(0),
     }},
     color: "#FFFF00",
-    requires: new Decimal(100 * (1.1 ** 15)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 15)), // Can be a function that takes requirement increases into account
     resource: "q", // Name of prestige currency
     resourceEN: "q", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "p", // Name of resource prestige is based on
@@ -585,7 +635,7 @@ addLayer("r", {
 		points: new Decimal(0),
     }},
     color: "#F0FF00",
-    requires: new Decimal(100 * (1.1 ** 16)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 16)), // Can be a function that takes requirement increases into account
     resource: "r", // Name of prestige currency
     resourceEN: "r", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "q", // Name of resource prestige is based on
@@ -617,7 +667,7 @@ addLayer("s", {
 		points: new Decimal(0),
     }},
     color: "#E0FF00",
-    requires: new Decimal(100 * (1.1 ** 17)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 17)), // Can be a function that takes requirement increases into account
     resource: "s", // Name of prestige currency
     resourceEN: "s", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "r", // Name of resource prestige is based on
@@ -649,7 +699,7 @@ addLayer("t", {
 		points: new Decimal(0),
     }},
     color: "#D0FF00",
-    requires: new Decimal(100 * (1.1 ** 18)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 18)), // Can be a function that takes requirement increases into account
     resource: "t", // Name of prestige currency
     resourceEN: "t", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "s", // Name of resource prestige is based on
@@ -681,7 +731,7 @@ addLayer("u", {
 		points: new Decimal(0),
     }},
     color: "#C0FF00",
-    requires: new Decimal(100 * (1.1 ** 19)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 19)), // Can be a function that takes requirement increases into account
     resource: "u", // Name of prestige currency
     resourceEN: "u", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "t", // Name of resource prestige is based on
@@ -713,7 +763,7 @@ addLayer("v", {
 		points: new Decimal(0),
     }},
     color: "#B0FF00",
-    requires: new Decimal(100 * (1.1 ** 20)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 20)), // Can be a function that takes requirement increases into account
     resource: "v", // Name of prestige currency
     resourceEN: "v", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "u", // Name of resource prestige is based on
@@ -745,7 +795,7 @@ addLayer("w", {
 		points: new Decimal(0),
     }},
     color: "#A0FF00",
-    requires: new Decimal(100 * (1.1 ** 21)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 21)), // Can be a function that takes requirement increases into account
     resource: "w", // Name of prestige currency
     resourceEN: "w", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "v", // Name of resource prestige is based on
@@ -777,7 +827,7 @@ addLayer("x", {
 		points: new Decimal(0),
     }},
     color: "#90FF00",
-    requires: new Decimal(100 * (1.1 ** 22)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 22)), // Can be a function that takes requirement increases into account
     resource: "x", // Name of prestige currency
     resourceEN: "x", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "w", // Name of resource prestige is based on
@@ -809,7 +859,7 @@ addLayer("y", {
 		points: new Decimal(0),
     }},
     color: "#80FF00",
-    requires: new Decimal(100 * (1.1 ** 23)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 23)), // Can be a function that takes requirement increases into account
     resource: "y", // Name of prestige currency
     resourceEN: "y", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "x", // Name of resource prestige is based on
@@ -841,7 +891,7 @@ addLayer("z", {
 		points: new Decimal(0),
     }},
     color: "#70FF00",
-    requires: new Decimal(100 * (1.1 ** 24)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 24)), // Can be a function that takes requirement increases into account
     resource: "z", // Name of prestige currency
     resourceEN: "z", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "y", // Name of resource prestige is based on
@@ -894,7 +944,7 @@ addLayer("a2", {
 		points: new Decimal(0),
     }},
     color: "#60FF00",
-    requires: new Decimal(100 * (1.1 ** 25)), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1e10 * (1.1 ** 25)), // Can be a function that takes requirement increases into account
     resource: "a2", // Name of prestige currency
     resourceEN: "a2", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "z", // Name of resource prestige is based on
