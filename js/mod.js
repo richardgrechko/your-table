@@ -1,6 +1,6 @@
 let modInfo = {
-	name: "The ??? Table",
-	nameEN: "The ??? Table",// When you open the otherLanguageMod, this is the second language
+	name: "信表",
+	nameEN: "The Letter Table",// When you open the otherLanguageMod, this is the second language
 	id: "mymod2",
 	author: "nobody",
 	pointsName: "points",
