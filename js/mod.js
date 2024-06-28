@@ -1,8 +1,8 @@
 let modInfo = {
 	name: "信表",
 	nameEN: "The Letter Table",// When you open the otherLanguageMod, this is the second language
-	id: "mymod2",
-	author: "nobody",
+	id: "TheLetterTable",
+	author: "richardgrechko",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
@@ -50,7 +50,7 @@ function changelog(){
 				- 开发了 The Modding Table, 这何尝不是一种TMT<br>
 			<br><br>
 		`:`
-		<br><br><br><h1>ChangeLog:</h1><br>(No<span style='color: red'><s> Spoiler Warning!</s></span>)<br><br>
+		<br><br><br><h1>ChangeLog:</h1><br>(No <span style='color: red'><s>Spoiler Warning!</s></span>)<br><br>
 		<span style="font-size: 17px;">
 			<h3><s>NO, YOU SHOULD WRITE THIS YOURSELF</s></h3><br><br>
 			<h3>v3.0 - Unprecedented changes</h3><br>
@@ -81,7 +81,7 @@ function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
 
-	let gain = new Decimal(1).mul(player.a.points.add(1)).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
+	let gain = new Decimal(1).mul(player.a.points).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
 	return gain
 }
 
