@@ -39,6 +39,7 @@ addLayer("a", {
     exponent: 0.55, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
+	    if (hasUpgrade("a", 11)) mult = mult.mul(new Decimal(2))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -52,9 +53,10 @@ addLayer("a", {
 		rows: 1,
 		cols: 1,
 		11: {
-			name: "bla",
-			description: "i dont know what i am doing",
-			descriptionEN: "i dont know what i am doing",
+			title: "bla",
+			titleEN: "bla",
+			description: "x2a增益",
+			descriptionEN: "x2 a gain",
 			cost: new Decimal(10),
 		},
 	},
