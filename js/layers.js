@@ -94,7 +94,7 @@ addLayer("a", {
 		},
 	},
 	passiveGeneration() { return hasUpgrade("b", 11) },
-	autobuyUpgrades() { return hasUpgrade("b", 12) },
+	autoUpgrade() { return hasUpgrade("b", 12) },
     layerShown(){return true},
 })
 addLayer("b", {
