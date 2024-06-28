@@ -53,7 +53,9 @@ addLayer("a", {
 		cols: 1,
 		11: {
 			name: "bla",
+			nameEN: "bla",
 			description: "i dont know what i am doing",
+			descriptionEN: "i dont know what i am doing",
 			cost: new Decimal(10),
 		},
 	},
