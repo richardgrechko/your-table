@@ -57,7 +57,7 @@ addLayer("a", {
 			cost: new Decimal(10),
 		},
 	},
-	autoPrestige() { return player.b.points.gte(10) },
+	passiveGeneration() { return player.b.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("b", {
@@ -89,7 +89,7 @@ addLayer("b", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.c.points.gte(10) },
+	passiveGeneration() { return player.c.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("c", {
@@ -121,7 +121,7 @@ addLayer("c", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.d.points.gte(10) },
+	passiveGeneration() { return player.d.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("d", {
@@ -153,7 +153,7 @@ addLayer("d", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.e.points.gte(10) },
+	passiveGeneration() { return player.e.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("e", {
@@ -185,7 +185,7 @@ addLayer("e", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.f.points.gte(10) },
+	passiveGeneration() { return player.f.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("f", {
@@ -217,7 +217,7 @@ addLayer("f", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.g.points.gte(10) },
+	passiveGeneration() { return player.g.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("g", {
@@ -249,7 +249,7 @@ addLayer("g", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.h.points.gte(10) },
+	passiveGeneration() { return player.h.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("h", {
@@ -281,7 +281,7 @@ addLayer("h", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.i.points.gte(10) },
+	passiveGeneration() { return player.i.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("i", {
@@ -313,7 +313,7 @@ addLayer("i", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.j.points.gte(10) },
+	passiveGeneration() { return player.j.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("j", {
@@ -345,7 +345,7 @@ addLayer("j", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.k.points.gte(10) },
+	passiveGeneration() { return player.k.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("k", {
@@ -377,7 +377,7 @@ addLayer("k", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.l.points.gte(10) },
+	passiveGeneration() { return player.l.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("l", {
@@ -409,7 +409,7 @@ addLayer("l", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.m.points.gte(10) },
+	passiveGeneration() { return player.m.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("m", {
@@ -441,7 +441,7 @@ addLayer("m", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.n.points.gte(10) },
+	passiveGeneration() { return player.n.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("n", {
@@ -473,7 +473,7 @@ addLayer("n", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.o.points.gte(10) },
+	passiveGeneration() { return player.o.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("o", {
@@ -505,7 +505,7 @@ addLayer("o", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.p.points.gte(10) },
+	passiveGeneration() { return player.p.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("p", {
@@ -537,7 +537,7 @@ addLayer("p", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.q.points.gte(10) },
+	passiveGeneration() { return player.q.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("q", {
@@ -569,7 +569,7 @@ addLayer("q", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.r.points.gte(10) },
+	passiveGeneration() { return player.r.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("r", {
@@ -601,7 +601,7 @@ addLayer("r", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.s.points.gte(10) },
+	passiveGeneration() { return player.s.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("s", {
@@ -633,7 +633,7 @@ addLayer("s", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.t.points.gte(10) },
+	passiveGeneration() { return player.t.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("t", {
@@ -665,7 +665,7 @@ addLayer("t", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.u.points.gte(10) },
+	passiveGeneration() { return player.u.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("u", {
@@ -697,7 +697,7 @@ addLayer("u", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.v.points.gte(10) },
+	passiveGeneration() { return player.v.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("v", {
@@ -729,7 +729,7 @@ addLayer("v", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.w.points.gte(10) },
+	passiveGeneration() { return player.w.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("w", {
@@ -761,7 +761,7 @@ addLayer("w", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.x.points.gte(10) },
+	passiveGeneration() { return player.x.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("x", {
@@ -793,7 +793,7 @@ addLayer("x", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.y.points.gte(10) },
+	passiveGeneration() { return player.y.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("y", {
@@ -825,7 +825,7 @@ addLayer("y", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.z.points.gte(10) },
+	passiveGeneration() { return player.z.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("z", {
@@ -857,7 +857,7 @@ addLayer("z", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	autoPrestige() { return player.a2.points.gte(10) },
+	passiveGeneration() { return player.a2.points.gte(10) },
     layerShown(){return true},
 })
 addLayer("2layer small", {// Add a * small* to generate a slightly different layer
