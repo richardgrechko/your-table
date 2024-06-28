@@ -6,7 +6,7 @@ let modInfo = {
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
-	otherLanguageMod: false,// When on, it will ask the player to choose a language at the beginning of the game
+	otherLanguageMod: true,// When on, it will ask the player to choose a language at the beginning of the game
 	languageMod: true,// Use when otherLanguageMod is off, default are true -> English, false -> Chinese
 	//It offers a portable way to translate, but it is not recommended
 
