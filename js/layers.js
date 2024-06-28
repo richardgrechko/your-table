@@ -44,6 +44,7 @@ addLayer("a", {
 	    if (hasUpgrade("a", 13)) mult = mult.mul(new Decimal(5))
 	    if (hasUpgrade("a", 14)) mult = mult.mul(new Decimal(10))
 	    if (hasUpgrade("a", 15)) mult = mult.mul(new Decimal(20))
+	    mult = mult.mul(player.b.points.add(1)).mul(player.c.points.add(1)).mul(player.d.points.add(1)).mul(player.e.points.add(1)).mul(player.f.points.add(1)).mul(player.g.points.add(1)).mul(player.h.points.add(1)).mul(player.i.points.add(1)).mul(player.j.points.add(1)).mul(player.k.points.add(1)).mul(player.l.points.add(1)).mul(player.m.points.add(1)).mul(player.n.points.add(1)).mul(player.n.points.add(1)).mul(player.o.points.add(1)).mul(player.p.points.add(1)).mul(player.q.points.add(1)).mul(player.r.points.add(1)).mul(player.s.points.add(1)).mul(player.t.points.add(1)).mul(player.u.points.add(1)).mul(player.v.points.add(1)).mul(player.w.points.add(1)).mul(player.x.points.add(1)).mul(player.y.points.add(1)).mul(player.z.points.add(1)).mul(player.a2.points.add(1))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
