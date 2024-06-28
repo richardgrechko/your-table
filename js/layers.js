@@ -54,8 +54,8 @@ addLayer("a", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
 	upgrades: {
-		rows: 1,
-		cols: 1,
+		rows: 5,
+		cols: 5,
 		11: {
 			title: "bla",
 			titleEN: "bla",
@@ -126,8 +126,8 @@ addLayer("b", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
 	upgrades: {
-		rows: 1,
-		cols: 1,
+		rows: 5,
+		cols: 5,
 		11: {
 			title: "自動化",
 			titleEN: "Automation",
