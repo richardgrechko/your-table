@@ -94,7 +94,7 @@ addLayer("ultra", {
 		points: new Decimal(0),
     }},
     color: "#FF9999",
-    requires: new Decimal(100), // Can be a function that takes requirement increases into account
+    requires: new Decimal(50), // Can be a function that takes requirement increases into account
     resource: "ultra-points", // Name of prestige currency
     resourceEN: "ultra-points", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "mega-points", // Name of resource prestige is based on
