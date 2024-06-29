@@ -44,6 +44,7 @@ addLayer("a", {
 	    if (hasUpgrade("a", 13)) mult = mult.mul(new Decimal(5))
 	    if (hasUpgrade("a", 14)) mult = mult.mul(new Decimal(10))
 	    if (hasUpgrade("a", 15)) mult = mult.mul(new Decimal(20))
+	    if (hasUpgrade("b", 21)) mult = mult.mul(player.points.log(10))
 	    mult = mult.mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
         return mult
     },
@@ -147,8 +148,8 @@ addLayer("b", {
 			title: "更多乘數",
 			titleEN: "More Multipliers",
 			description: `獲得基於積分的a<br>現在：x${player.points.log(10)}</br>`,
-			descriptionEN: `Gain a based on points.<br>Currently: x${player.points.log(10)}</br>`,
-			cost: new Decimal(100),
+			descriptionEN: `Gain a based on points<br>Currently: x${player.points.log(10)}</br>`,
+			cost: new Decimal(1000),
 		},
 	},
 	passiveGeneration() { return player.c.points.gte(10) },
