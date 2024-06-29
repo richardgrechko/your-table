@@ -1,3 +1,183 @@
+addLayer("0layer small", {// Add a * small* to generate a slightly different layer
+    name: "sideLayer0",
+    position: -1,
+    row: -5,
+    symbol() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 1 ↓' : '↓ layer 1 ↓'},
+    symbolEN() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 1 ↓' : '↓ layer 1 ↓'},
+    nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
+    startData() { return {
+        unlocked: true,
+        small: true,
+        points: new Decimal(0),// This actually does nothing, but you have to write this. (Unless you want add something in this layer. #Todo, might change that later.)
+    }},
+    color: "#fefefe",
+    type: "none",
+    tooltip(){return false},
+    layerShown(){return layerDisplayTotal(['super'])},// If any layer in the array is unlocked, it will returns true. Otherwise it will return false.
+	tabFormat: [
+        ["display-text", function() { return getPointsDisplay() }]
+    ],
+})
+addLayer("super", {
+    name: "super-points", // This is optional, only used in a few places, If absent it just uses the layer id
+    symbol: "super-points", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "super-points", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+    }},
+    color: "#FFFFFF",
+    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    resource: "super-points", // Name of prestige currency
+    resourceEN: "super-points", // The second name of prestige currency ( If you open otherLanguageMod )
+    baseResource: "points", // Name of resource prestige is based on
+    baseResourceEN: "points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseAmount() {return player.points}, // Get the current amount of baseResource
+    type: "none", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.55, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1).mul(player.mega.points.div(10).add(1)).mul(player.ultra.points.div(10).add(1)).mul(player.hyper.points.div(10).add(1)).mul(player.demi.points.div(10).add(1)).mul(player.a.points).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: -4, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+	passiveGeneration() { return true },
+    layerShown(){return true},
+})
+addLayer("mega", {
+    name: "mega-points", // This is optional, only used in a few places, If absent it just uses the layer id
+    symbol: "mega-points", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "mega-points", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+    }},
+    color: "#FFCCCC",
+    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    resource: "mega-points", // Name of prestige currency
+    resourceEN: "mega-points", // The second name of prestige currency ( If you open otherLanguageMod )
+    baseResource: "super-points", // Name of resource prestige is based on
+    baseResourceEN: "super-points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseAmount() {return player.super.points}, // Get the current amount of baseResource
+    type: "none", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.55, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1).mul(player.ultra.points.div(10).add(1)).mul(player.hyper.points.div(10).add(1)).mul(player.demi.points.div(10).add(1)).mul(player.a.points).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: -4, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+	passiveGeneration() { return true },
+    layerShown(){return true},
+})
+addLayer("ultra", {
+    name: "ultra-points", // This is optional, only used in a few places, If absent it just uses the layer id
+    symbol: "ultra-points", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "ultra-points", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+    }},
+    color: "#FF9999",
+    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    resource: "ultra-points", // Name of prestige currency
+    resourceEN: "ultra-points", // The second name of prestige currency ( If you open otherLanguageMod )
+    baseResource: "mega-points", // Name of resource prestige is based on
+    baseResourceEN: "mega-points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseAmount() {return player.mega.points}, // Get the current amount of baseResource
+    type: "none", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.55, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1).mul(player.hyper.points.div(10).add(1)).mul(player.demi.points.div(10).add(1)).mul(player.a.points).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: -4, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+	passiveGeneration() { return true },
+    layerShown(){return true},
+})
+addLayer("hyper", {
+    name: "hyper-points", // This is optional, only used in a few places, If absent it just uses the layer id
+    symbol: "hyper-points", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "hyper-points", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+    }},
+    color: "#FF6666",
+    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    resource: "hyper-points", // Name of prestige currency
+    resourceEN: "hyper-points", // The second name of prestige currency ( If you open otherLanguageMod )
+    baseResource: "ultra-points", // Name of resource prestige is based on
+    baseResourceEN: "ultra-points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseAmount() {return player.ultra.points}, // Get the current amount of baseResource
+    type: "none", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.55, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1).mul(player.demi.points.div(10).add(1)).mul(player.a.points).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: -4, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+	passiveGeneration() { return true },
+    layerShown(){return true},
+})
+addLayer("demi", {
+    name: "demi-points", // This is optional, only used in a few places, If absent it just uses the layer id
+    symbol: "demi-points", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "demi-points", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+    }},
+    color: "#FF3333",
+    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    resource: "demi-points", // Name of prestige currency
+    resourceEN: "demi-points", // The second name of prestige currency ( If you open otherLanguageMod )
+    baseResource: "hyper-points", // Name of resource prestige is based on
+    baseResourceEN: "hyper-points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseAmount() {return player.hyper.points}, // Get the current amount of baseResource
+    type: "none", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.55, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1).mul(player.a.points).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: -4, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+	passiveGeneration() { return true },
+    layerShown(){return true},
+})
 addLayer("1layer small", {// Add a * small* to generate a slightly different layer
     name: "sideLayer1",
     position: -1,
@@ -32,9 +212,9 @@ addLayer("a", {
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "a", // Name of prestige currency
     resourceEN: "a", // The second name of prestige currency ( If you open otherLanguageMod )
-    baseResource: "points", // Name of resource prestige is based on
-    baseResourceEN: "points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
-    baseAmount() {return player.points}, // Get the current amount of baseResource
+    baseResource: "demi-points", // Name of resource prestige is based on
+    baseResourceEN: "demi-points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseAmount() {return player.demi.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.55, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
@@ -44,7 +224,6 @@ addLayer("a", {
 	    if (hasUpgrade("a", 13)) mult = mult.mul(new Decimal(5))
 	    if (hasUpgrade("a", 14)) mult = mult.mul(new Decimal(10))
 	    if (hasUpgrade("a", 15)) mult = mult.mul(new Decimal(20))
-	    if (hasUpgrade("b", 21)) mult = mult.mul(player.points.log(10))
 	    mult = mult.mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
         return mult
     },
@@ -143,13 +322,6 @@ addLayer("b", {
 			description: "自動購買a升級",
 			descriptionEN: "Auto buy a upgrades",
 			cost: new Decimal(100),
-		},
-		21: {
-			title: "更多乘數",
-			titleEN: "More Multipliers",
-			description: `獲得基於積分的a\n現在：x${player.points.log(10)}`,
-			descriptionEN: `Gain a based on points\nCurrently: x${player.points.log(10)}`,
-			cost: new Decimal(1000),
 		},
 	},
 	passiveGeneration() { return player.c.points.gte(10) },
