@@ -48,6 +48,7 @@ addLayer("super", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
 	passiveGeneration() { return true },
+	canReset() { return false },
     layerShown(){return true},
 })
 addLayer("mega", {
@@ -80,6 +81,7 @@ addLayer("mega", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
 	passiveGeneration() { return player.super.points.gte(100) },
+	canReset() { return false },
     layerShown(){return true},
 })
 addLayer("ultra", {
@@ -112,6 +114,7 @@ addLayer("ultra", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
 	passiveGeneration() { return player.mega.points.gte(1000) },
+	canReset() { return false },
     layerShown(){return true},
 })
 addLayer("hyper", {
@@ -144,6 +147,7 @@ addLayer("hyper", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
 	passiveGeneration() { return player.ultra.points.gte(10000) },
+	canReset() { return false },
     layerShown(){return true},
 })
 addLayer("demi", {
@@ -176,6 +180,7 @@ addLayer("demi", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
 	passiveGeneration() { return player.hyper.points.gte(100000) },
+	canReset() { return false },
     layerShown(){return true},
 })
 addLayer("1layer small", {// Add a * small* to generate a slightly different layer
