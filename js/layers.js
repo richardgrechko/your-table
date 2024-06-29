@@ -37,7 +37,7 @@ addLayer("super", {
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.55, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
-        mult = new Decimal(1).add(1)).mul(player.mega.points.div(100).add(1)).mul(player.ultra.points.div(100).add(1)).mul(player.hyper.points.div(100).add(1)).mul(player.demi.points.div(100).add(1)).mul(player.a.points.add(1)).mul(player.b.points.div(100000).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
+        mult = new Decimal(1).mul(player.mega.points.div(100).add(1)).mul(player.ultra.points.div(100).add(1)).mul(player.hyper.points.div(100).add(1)).mul(player.demi.points.div(100).add(1)).mul(player.a.points.add(1)).mul(player.b.points.div(100000).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -79,7 +79,7 @@ addLayer("mega", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	passiveGeneration() { return true },
+	passiveGeneration() { return player.super.points.gte(100) },
     layerShown(){return true},
 })
 addLayer("ultra", {
@@ -111,7 +111,7 @@ addLayer("ultra", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	passiveGeneration() { return true },
+	passiveGeneration() { return player.mega.points.gte(1000) },
     layerShown(){return true},
 })
 addLayer("hyper", {
@@ -143,7 +143,7 @@ addLayer("hyper", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	passiveGeneration() { return true },
+	passiveGeneration() { return player.ultra.points.gte(10000) },
     layerShown(){return true},
 })
 addLayer("demi", {
@@ -175,7 +175,7 @@ addLayer("demi", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-	passiveGeneration() { return true },
+	passiveGeneration() { return player.hyper.points.gte(100000) },
     layerShown(){return true},
 })
 addLayer("1layer small", {// Add a * small* to generate a slightly different layer
