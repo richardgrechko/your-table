@@ -34,7 +34,7 @@ addLayer("super", {
     baseResource: "points", // Name of resource prestige is based on
     baseResourceEN: "points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.points}, // Get the current amount of baseResource
-    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.55, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1).mul(player.mega.points.div(10).add(1)).mul(player.ultra.points.div(10).add(1)).mul(player.hyper.points.div(10).add(1)).mul(player.demi.points.div(10).add(1)).mul(player.a.points).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
@@ -66,7 +66,7 @@ addLayer("mega", {
     baseResource: "super-points", // Name of resource prestige is based on
     baseResourceEN: "super-points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.super.points}, // Get the current amount of baseResource
-    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.55, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1).mul(player.ultra.points.div(10).add(1)).mul(player.hyper.points.div(10).add(1)).mul(player.demi.points.div(10).add(1)).mul(player.a.points).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
@@ -98,7 +98,7 @@ addLayer("ultra", {
     baseResource: "mega-points", // Name of resource prestige is based on
     baseResourceEN: "mega-points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.mega.points}, // Get the current amount of baseResource
-    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.55, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1).mul(player.hyper.points.div(10).add(1)).mul(player.demi.points.div(10).add(1)).mul(player.a.points).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
@@ -130,7 +130,7 @@ addLayer("hyper", {
     baseResource: "ultra-points", // Name of resource prestige is based on
     baseResourceEN: "ultra-points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.ultra.points}, // Get the current amount of baseResource
-    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.55, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1).mul(player.demi.points.div(10).add(1)).mul(player.a.points).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
@@ -162,7 +162,7 @@ addLayer("demi", {
     baseResource: "hyper-points", // Name of resource prestige is based on
     baseResourceEN: "hyper-points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.hyper.points}, // Get the current amount of baseResource
-    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.55, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1).mul(player.a.points).mul(player.b.points.div(10).add(1)).mul(player.c.points.div(10).add(1)).mul(player.d.points.div(10).add(1)).mul(player.e.points.div(10).add(1)).mul(player.f.points.div(10).add(1)).mul(player.g.points.div(10).add(1)).mul(player.h.points.div(10).add(1)).mul(player.i.points.div(10).add(1)).mul(player.j.points.div(10).add(1)).mul(player.k.points.div(10).add(1)).mul(player.l.points.div(10).add(1)).mul(player.m.points.div(10).add(1)).mul(player.n.points.div(10).add(1)).mul(player.o.points.div(10).add(1)).mul(player.p.points.div(10).add(1)).mul(player.q.points.div(10).add(1)).mul(player.r.points.div(10).add(1)).mul(player.s.points.div(10).add(1)).mul(player.t.points.div(10).add(1)).mul(player.u.points.div(10).add(1)).mul(player.v.points.div(10).add(1)).mul(player.w.points.div(10).add(1)).mul(player.x.points.div(10).add(1)).mul(player.y.points.div(10).add(1)).mul(player.z.points.div(10).add(1)).mul(player.a2.points.div(10).add(1))
