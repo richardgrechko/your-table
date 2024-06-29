@@ -146,8 +146,8 @@ addLayer("b", {
 		21: {
 			title: "更多乘數",
 			titleEN: "More Multipliers",
-			description: "獲得基於積分的a<br>現在：x{{player.points.log(10)}}</br>",
-			descriptionEN: "Gain a based on points.<br>Currently: x{{player.points.log(10)}}</br>",
+			description: `獲得基於積分的a<br>現在：x${player.points.log(10)}</br>`,
+			descriptionEN: `Gain a based on points.<br>Currently: x${player.points.log(10)}</br>`,
 			cost: new Decimal(100),
 		},
 	},
