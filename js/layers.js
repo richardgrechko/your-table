@@ -1,7 +1,7 @@
 addLayer("0layer small", {// Add a * small* to generate a slightly different layer
     name: "sideLayer0",
     position: -1,
-    row: -6,
+    row: 0,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 0 ↓' : '↓ layer 0 ↓'},
     symbolEN() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 0 ↓' : '↓ layer 0 ↓'},
     nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
@@ -43,7 +43,7 @@ addLayer("super", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: -5, // Row the layer is in on the tree (0 is the first row)
+    row: 1, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -75,7 +75,7 @@ addLayer("mega", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: -4, // Row the layer is in on the tree (0 is the first row)
+    row: 2, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -107,7 +107,7 @@ addLayer("ultra", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: -3, // Row the layer is in on the tree (0 is the first row)
+    row: 3, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -139,7 +139,7 @@ addLayer("hyper", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: -2, // Row the layer is in on the tree (0 is the first row)
+    row: 4, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -171,7 +171,7 @@ addLayer("demi", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: -1, // Row the layer is in on the tree (0 is the first row)
+    row: 5, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -181,7 +181,7 @@ addLayer("demi", {
 addLayer("1layer small", {// Add a * small* to generate a slightly different layer
     name: "sideLayer1",
     position: -1,
-    row: 0,
+    row: 6,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 1 ↓' : '↓ layer 1 ↓'},
     symbolEN() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 1 ↓' : '↓ layer 1 ↓'},
     nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
@@ -230,7 +230,7 @@ addLayer("a", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 0, // Row the layer is in on the tree (0 is the first row)
+    row: 7, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -302,7 +302,7 @@ addLayer("b", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 1, // Row the layer is in on the tree (0 is the first row)
+    row: 8, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -352,7 +352,7 @@ addLayer("c", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 2, // Row the layer is in on the tree (0 is the first row)
+    row: 9, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -384,7 +384,7 @@ addLayer("d", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 3, // Row the layer is in on the tree (0 is the first row)
+    row: 10, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -416,7 +416,7 @@ addLayer("e", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 4, // Row the layer is in on the tree (0 is the first row)
+    row: 11, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -448,7 +448,7 @@ addLayer("f", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 5, // Row the layer is in on the tree (0 is the first row)
+    row: 12, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -480,7 +480,7 @@ addLayer("g", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 6, // Row the layer is in on the tree (0 is the first row)
+    row: 13, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -512,7 +512,7 @@ addLayer("h", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 7, // Row the layer is in on the tree (0 is the first row)
+    row: 14, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -544,7 +544,7 @@ addLayer("i", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 8, // Row the layer is in on the tree (0 is the first row)
+    row: 15, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -576,7 +576,7 @@ addLayer("j", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 9, // Row the layer is in on the tree (0 is the first row)
+    row: 16, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -608,7 +608,7 @@ addLayer("k", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 10, // Row the layer is in on the tree (0 is the first row)
+    row: 17, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -640,7 +640,7 @@ addLayer("l", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 11, // Row the layer is in on the tree (0 is the first row)
+    row: 18, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -672,7 +672,7 @@ addLayer("m", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 12, // Row the layer is in on the tree (0 is the first row)
+    row: 19, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -704,7 +704,7 @@ addLayer("n", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 13, // Row the layer is in on the tree (0 is the first row)
+    row: 20, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -736,7 +736,7 @@ addLayer("o", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 14, // Row the layer is in on the tree (0 is the first row)
+    row: 21, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -768,7 +768,7 @@ addLayer("p", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 15, // Row the layer is in on the tree (0 is the first row)
+    row: 22, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -800,7 +800,7 @@ addLayer("q", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 16, // Row the layer is in on the tree (0 is the first row)
+    row: 23, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -832,7 +832,7 @@ addLayer("r", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 17, // Row the layer is in on the tree (0 is the first row)
+    row: 24, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -864,7 +864,7 @@ addLayer("s", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 18, // Row the layer is in on the tree (0 is the first row)
+    row: 25, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -896,7 +896,7 @@ addLayer("t", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 19, // Row the layer is in on the tree (0 is the first row)
+    row: 26, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -928,7 +928,7 @@ addLayer("u", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 20, // Row the layer is in on the tree (0 is the first row)
+    row: 27, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -960,7 +960,7 @@ addLayer("v", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 21, // Row the layer is in on the tree (0 is the first row)
+    row: 28, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -992,7 +992,7 @@ addLayer("w", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 22, // Row the layer is in on the tree (0 is the first row)
+    row: 29, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -1024,7 +1024,7 @@ addLayer("x", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 23, // Row the layer is in on the tree (0 is the first row)
+    row: 30, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -1056,7 +1056,7 @@ addLayer("y", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 24, // Row the layer is in on the tree (0 is the first row)
+    row: 31, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -1088,7 +1088,7 @@ addLayer("z", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 25, // Row the layer is in on the tree (0 is the first row)
+    row: 32, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
@@ -1098,7 +1098,7 @@ addLayer("z", {
 addLayer("2layer small", {// Add a * small* to generate a slightly different layer
     name: "sideLayer2",
     position: -1,
-    row: 26,
+    row: 33,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 2 ↓' : '↓ layer 2 ↓'},
     symbolEN() {return (options.ch || modInfo.languageMod==false) ? '↓ 层级 2 ↓' : '↓ layer 2 ↓'},
     nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
@@ -1141,7 +1141,7 @@ addLayer("a2", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 27, // Row the layer is in on the tree (0 is the first row)
+    row: 34, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
