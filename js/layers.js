@@ -60,7 +60,7 @@ addLayer("mega", {
 		points: new Decimal(0),
     }},
     color: "#FFCCCC",
-    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    requires: new Decimal(100), // Can be a function that takes requirement increases into account
     resource: "mega-points", // Name of prestige currency
     resourceEN: "mega-points", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "super-points", // Name of resource prestige is based on
@@ -92,7 +92,7 @@ addLayer("ultra", {
 		points: new Decimal(0),
     }},
     color: "#FF9999",
-    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    requires: new Decimal(1000), // Can be a function that takes requirement increases into account
     resource: "ultra-points", // Name of prestige currency
     resourceEN: "ultra-points", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "mega-points", // Name of resource prestige is based on
@@ -124,7 +124,7 @@ addLayer("hyper", {
 		points: new Decimal(0),
     }},
     color: "#FF6666",
-    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    requires: new Decimal(10000), // Can be a function that takes requirement increases into account
     resource: "hyper-points", // Name of prestige currency
     resourceEN: "hyper-points", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "ultra-points", // Name of resource prestige is based on
@@ -156,7 +156,7 @@ addLayer("demi", {
 		points: new Decimal(0),
     }},
     color: "#FF3333",
-    requires: new Decimal(10), // Can be a function that takes requirement increases into account
+    requires: new Decimal(100000), // Can be a function that takes requirement increases into account
     resource: "demi-points", // Name of prestige currency
     resourceEN: "demi-points", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "hyper-points", // Name of resource prestige is based on
