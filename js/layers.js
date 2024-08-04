@@ -13,7 +13,7 @@ addLayer("0layer small", {// Add a * small* to generate a slightly different lay
     color: "#fefefe",
     type: "none",
     tooltip(){return false},
-    layerShown(){return layerDisplayTotal(['super'])},// If any layer in the array is unlocked, it will returns true. Otherwise it will return false.
+    layerShown(){return layerDisplayTotal(['rank'])},// If any layer in the array is unlocked, it will returns true. Otherwise it will return false.
 	tabFormat: [
         ["display-text", function() { return getPointsDisplay() }]
     ],
@@ -27,7 +27,7 @@ addLayer("rank", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#FFFFFF",
+    color: "#84e600",
     requires: new Decimal(100), // Can be a function that takes requirement increases into account
     resource: "Rank", // Name of prestige currency
     resourceEN: "Rank", // The second name of prestige currency ( If you open otherLanguageMod )
