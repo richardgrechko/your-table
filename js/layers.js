@@ -53,7 +53,7 @@ addLayer("rank", {
 addLayer("1layer small", {// Add a * small* to generate a slightly different layer
     name: "sideLayer1",
     position: -1,
-    row: 6,
+    row: 2,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '[ ??? ]' : '[ Beyond-Ranks ]'},
     symbolEN() {return (options.ch || modInfo.languageMod==false) ? '[ ??? ]' : '[ Beyond-Ranks ]'},
     nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
