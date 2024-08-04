@@ -59,7 +59,7 @@ addLayer("tier", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#84e600",
+    color: "#e6c900",
     requires: new Decimal(12), // Can be a function that takes requirement increases into account
     resource: "Tier", // Name of prestige currency
     resourceEN: "Tier", // The second name of prestige currency ( If you open otherLanguageMod )
@@ -75,7 +75,7 @@ addLayer("tier", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 1, // Row the layer is in on the tree (0 is the first row)
+    row: 2, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
