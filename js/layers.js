@@ -65,7 +65,7 @@ addLayer("1layer small", {// Add a * small* to generate a slightly different lay
     color: "#fefefe",
     type: "none",
     tooltip(){return false},
-    layerShown(){return layerDisplayTotal(['a'])},// If any layer in the array is unlocked, it will returns true. Otherwise it will return false.
+    layerShown(){return true/*layerDisplayTotal(['beyondRank'])*/},// If any layer in the array is unlocked, it will returns true. Otherwise it will return false.
 	tabFormat: [
         ["display-text", function() { return getPointsDisplay() }]
     ],
