@@ -81,7 +81,7 @@ function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
 
-	let gain = new Decimal(1).add(player.rank.points)
+	let gain = new Decimal(1).add(player.rank.points).mul(player.tier.points.mul(2).root(1.2).add(1))
 	return gain
 }
 
