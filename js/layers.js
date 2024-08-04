@@ -35,7 +35,39 @@ addLayer("rank", {
     baseResourceEN: "points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.75, // Prestige currency exponent
+    exponent: 1.5, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: 1, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+	canReset() { return true },
+    layerShown(){return true},
+})
+addLayer("tier", {
+    name: "tier", // This is optional, only used in a few places, If absent it just uses the layer id
+    symbol: "tier", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "tier", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+    }},
+    color: "#84e600",
+    requires: new Decimal(12), // Can be a function that takes requirement increases into account
+    resource: "Tier", // Name of prestige currency
+    resourceEN: "Tier", // The second name of prestige currency ( If you open otherLanguageMod )
+    baseResource: "Rank", // Name of resource prestige is based on
+    baseResourceEN: "Rank", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseAmount() {return player.rank.points}, // Get the current amount of baseResource
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 1.4, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
