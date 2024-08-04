@@ -12,7 +12,7 @@ let modInfo = {
 
 	forceOneTab: false,// Enable Single-Tab Mode ( This feature doen't work fluently as you'd imagine, it's made for expert, and if you open it, it will show 'tree-tab' page everytime you refresh the page ( ps: you can change that at save.js, line 234 ) )
 
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
+	initialStartPoints: new Decimal (100).mul(player.tier.points.add(1)), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
 
