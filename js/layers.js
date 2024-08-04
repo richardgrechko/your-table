@@ -88,7 +88,7 @@ addLayer("tier", {
 			titleEN: "Tier upgrade 11",
             		description: "You can now automatically Rank up",
             		descriptionEN: "You can now automatically Rank up",
-            		cost: new Decimal(5),
+            		cost: new Decimal(1),
             		unlocked() { return true},
 		},
 	},
