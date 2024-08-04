@@ -85,7 +85,9 @@ addLayer("tier", {
         	cols: 5,
 		11: {
 			title: "Tier upgrade 11",
+			titleEN: "Tier upgrade 11",
             		description: "You can now automatically Rank up",
+            		descriptionEN: "You can now automatically Rank up",
             		cost: new Decimal(5),
             		unlocked() { return true},
 		},
