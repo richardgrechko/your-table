@@ -82,10 +82,42 @@ addLayer("tier", {
 	canReset() { return true },
     layerShown(){return true},
 })
+addLayer("tetr", {
+    name: "tetr", // This is optional, only used in a few places, If absent it just uses the layer id
+    symbol: "tetr", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "tetr", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+    }},
+    color: "#e66d00",
+    requires: new Decimal(12), // Can be a function that takes requirement increases into account
+    resource: "Tetr", // Name of prestige currency
+    resourceEN: "Tetr", // The second name of prestige currency ( If you open otherLanguageMod )
+    baseResource: "Tetr", // Name of resource prestige is based on
+    baseResourceEN: "Tetr", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseAmount() {return player.tier.points}, // Get the current amount of baseResource
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.6, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: 2, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+	canReset() { return true },
+    layerShown(){return true},
+})
 addLayer("1layer small", {// Add a * small* to generate a slightly different layer
     name: "sideLayer1",
     position: -1,
-    row: 2,
+    row: 6,
     symbol() {return (options.ch || modInfo.languageMod==false) ? '[ ??? ]' : '[ Beyond-Ranks ]'},
     symbolEN() {return (options.ch || modInfo.languageMod==false) ? '[ ??? ]' : '[ Beyond-Ranks ]'},
     nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
