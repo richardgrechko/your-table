@@ -82,7 +82,6 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1).add(player.rank.points)
-	if (hasUpgrade("a", 11)) gain = gain.add(1)
 	return gain
 }
 
