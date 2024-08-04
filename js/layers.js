@@ -47,6 +47,7 @@ addLayer("rank", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
+	autoPrestige() {return hasUpgrade("tier", 11)},
 	canReset() { return true },
     layerShown(){return true},
 })
@@ -79,6 +80,16 @@ addLayer("tier", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
+	upgrades: {
+        	rows: 5,
+        	cols: 5,
+		11: {
+			title: "Tier upgrade 11",
+            		description: "You can now automatically Rank up",
+            		cost: new Decimal(5),
+            		unlocked() { return true},
+		},
+	},
 	canReset() { return true },
     layerShown(){return true},
 })
@@ -92,7 +103,7 @@ addLayer("tetr", {
 		points: new Decimal(0),
     }},
     color: "#e66d00",
-    requires: new Decimal(12), // Can be a function that takes requirement increases into account
+    requires: new Decimal(10).mul(new Decimal(1.2).pow(2)).floor(), // Can be a function that takes requirement increases into account
     resource: "Tetr", // Name of prestige currency
     resourceEN: "Tetr", // The second name of prestige currency ( If you open otherLanguageMod )
     baseResource: "Tetr", // Name of resource prestige is based on
@@ -107,12 +118,12 @@ addLayer("tetr", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 2, // Row the layer is in on the tree (0 is the first row)
+    row: 3, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
 	canReset() { return true },
-    layerShown(){return true},
+    layerShown(){return hasUpgrade("tier", 12)},
 })
 addLayer("1layer small", {// Add a * small* to generate a slightly different layer
     name: "sideLayer1",
