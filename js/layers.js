@@ -112,6 +112,7 @@ addLayer("tier", {
 			},
 		},
 	},
+	autoPrestige() {return hasUpgrade("tetr", 11)},
 	canReset() { return true },
     layerShown(){return true},
 })
