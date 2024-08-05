@@ -49,8 +49,9 @@ addLayer("rank", {
     ],
 	autoPrestige() {return hasUpgrade("tier", 11)},
 	passiveGeneration() {
-		if (hasUpgrade("pent", 12)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1));
-		if (hasUpgrade("tetr", 11)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1);
+		if (hasUpgrade("rank", 11)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1)).mul(5).mul(g);
+		if (hasUpgrade("pent", 12)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1)).mul(g);
+		if (hasUpgrade("tetr", 11)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(g);
 		return new Decimal(0);
 	},
 	canReset() {
@@ -60,6 +61,77 @@ addLayer("rank", {
 		if (hasUpgrade("tetr", 12)) return true;
 		return false;
 	},
+	buyables: {
+		rows: 1,
+		cols: 3,
+		11:{
+			title(){
+				return "<h3>more rank gain!!!</h3>";
+			},
+			display(){
+				let data = tmp[this.layer].buyables[this.id];
+				return "Level: "+format(player[this.layer].buyables[this.id])+"<br>"+
+				"You gain "+format(data.effect)+"x more ranks<br>"+
+				"Cost for the next level: Rank "+format(data.cost);
+			},
+			cost(){
+				let a=player[this.layer].buyables[this.id];
+                let cost = new Decimal(1)
+				a=Decimal.pow(2,a);
+				return cost.mul(Decimal.mul(1e8,a));
+			},
+			canAfford() {
+                   return player[this.layer].points.gte(tmp[this.layer].buyables[this.id].cost)
+			},
+               buy() { 
+                   player[this.layer].buyables[this.id] = player[this.layer].buyables[this.id].add(1)
+               },
+			  effect(){
+				  let g = new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1)).mul(5);
+				  g = g.mul(1.8);
+				  return g;
+			  },
+			  unlocked(){
+				  return true;
+			  },
+			  style() {
+				if (player.rank.points.lt(this.cost())) return {
+					'border-radius': '0%',
+					'color':'white',
+					'background-color':'black',
+					'border':'2px solid',
+					'height':'100px'
+				}
+				else return {
+					'border-radius': '0%',
+					'color':'white',
+					'background-color':'rgb(25, 70, 12)',
+					'border':'2px solid',
+					'height':'100px'
+				}
+			  }, 
+		},
+	},
+	upgrades: {
+        	rows: 5,
+        	cols: 5,
+		11: {
+			title: "Rank upgrade 11",
+			titleEN: "Rank upgrade 11",
+            		description: "Point gain is better + 5x Rank generation",
+            		descriptionEN: "Point gain is better + 5x Rank generation",
+            		cost: new Decimal(1000000),
+            		unlocked() { return true},
+		},
+		12: {
+			title: "Rank upgrade 12",
+			titleEN: "Rank upgrade 12",
+            		description: "10x Rank generation",
+            		descriptionEN: "10x Rank generation",
+            		cost: new Decimal(10000000),
+            		unlocked() { return true},
+		},
+	 },
     layerShown(){return true},
 })
 addLayer("tier", {
