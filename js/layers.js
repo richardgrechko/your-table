@@ -88,7 +88,7 @@ addLayer("rank", {
 			cost(){
 				let a=player[this.layer].buyables[this.id];
                 let cost = new Decimal(1)
-				a=Decimal.pow(2,a);
+				a=Decimal.pow(3,a);
 				return cost.mul(Decimal.mul(1e8,a));
 			},
 			canAfford() {
