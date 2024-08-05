@@ -52,7 +52,10 @@ addLayer("rank", {
 		if (hasUpgrade("tetr", 11)) return new Decimal(1).mul(player.rank.points.root(4));
 		return new Decimal(0);
 	},
-	canReset() { return true },
+	canReset() {
+		if (hasUpgrade("tetr", 12)) return false;
+		return true;
+	},
     layerShown(){return true},
 })
 addLayer("tier", {
@@ -94,10 +97,6 @@ addLayer("tier", {
             		descriptionEN: "You can now automatically Rank up",
             		cost: new Decimal(1),
             		unlocked() { return true},
-			style: {
-				"width": "120px",
-				"height": "100px"
-			},
 		},
 		12: {
 			title: "Tier upgrade 12",
@@ -106,11 +105,11 @@ addLayer("tier", {
             		descriptionEN: "You can now Tetr up!",
             		cost: new Decimal(5),
             		unlocked() { return true},
-			style: {
-				"width": "120px",
-				"height": "100px"
-			},
 		},
+	},
+	passiveGeneration() {
+		if (hasUpgrade("tetr", 12)) return new Decimal(1).mul(player.tier.points.root(5));
+		return new Decimal(0);
 	},
 	autoPrestige() {return hasUpgrade("tetr", 11)},
 	canReset() { return true },
@@ -155,10 +154,58 @@ addLayer("tetr", {
             		descriptionEN: "You can now automatically Tier up",
             		cost: new Decimal(1),
             		unlocked() { return true},
-			style: {
-				"width": "120px",
-				"height": "100px"
-			},
+		},
+		12: {
+			title: "Tetr upgrade 12",
+			titleEN: "Tetr upgrade 12",
+            		description: "You can now passivly generate Tiers",
+            		descriptionEN: "You can now passivly generate Tiers",
+            		cost: new Decimal(10),
+            		unlocked() { return true},
+		},
+	},
+	canReset() { return true },
+    layerShown(){return hasUpgrade("tier", 12)},
+})
+addLayer("pent", {
+    name: "pent", // This is optional, only used in a few places, If absent it just uses the layer id
+    symbol: "pent", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "pent", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+    }},
+    color: "#e66d00",
+    requires: new Decimal(10).mul(new Decimal(1.2).pow(3)).floor(), // Can be a function that takes requirement increases into account
+    resource: "Pent", // Name of prestige currency
+    resourceEN: "Pent", // The second name of prestige currency ( If you open otherLanguageMod )
+    baseResource: "Tetr", // Name of resource prestige is based on
+    baseResourceEN: "Tetr", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseAmount() {return player.tetr.points}, // Get the current amount of baseResource
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 0.7, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: 3, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+	upgrades: {
+        	rows: 5,
+        	cols: 5,
+		11: {
+			title: "Pent upgrade 11",
+			titleEN: "Pent upgrade 11",
+            		description: "You can now automatically Tetr up",
+            		descriptionEN: "You can now automatically Tetr up",
+            		cost: new Decimal(1),
+            		unlocked() { return true},
 		},
 	},
 	canReset() { return true },
