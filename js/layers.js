@@ -49,10 +49,12 @@ addLayer("rank", {
     ],
 	autoPrestige() {return hasUpgrade("tier", 11)},
 	passiveGeneration() {
-		if (hasUpgrade("rank", 11)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1)).mul(5).mul(g);
-		if (hasUpgrade("pent", 12)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1)).mul(g);
-		if (hasUpgrade("tetr", 11)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(g);
-		return new Decimal(0);
+		let g = new Decimal(0),
+			h = new Decimal(1);
+		if (hasUpgrade("rank", 11)) g = new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1)).mul(5);
+		if (hasUpgrade("pent", 12)) g = new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1));
+		if (hasUpgrade("tetr", 11)) g = new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1);
+		return g.mul(h);
 	},
 	canReset() {
 		return true;
@@ -87,9 +89,8 @@ addLayer("rank", {
                    player[this.layer].buyables[this.id] = player[this.layer].buyables[this.id].add(1)
                },
 			  effect(){
-				  let g = new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1)).mul(5);
-				  g = g.mul(1.8);
-				  return g;
+				  h = h.mul(1.8);
+				  return h;
 			  },
 			  unlocked(){
 				  return true;
