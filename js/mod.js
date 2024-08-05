@@ -82,6 +82,7 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1).mul(player.rank.points).mul(player.tier.points.mul(2).root(1.2).add(1))
+	if (hasUpgrade("rank", 11)) gain = gain.mul(player.rank.multiplier.add(1));
 	return gain
 }
 
