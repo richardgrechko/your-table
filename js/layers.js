@@ -212,7 +212,7 @@ addLayer("pent", {
 		},
 	},
 	canReset() { return true },
-    layerShown(){return hasUpgrade("tier", 12)},
+    layerShown(){return hasUpgrade("tier", 12) || true},
 })
 addLayer("1layer small", {// Add a * small* to generate a slightly different layer
     name: "sideLayer1",
