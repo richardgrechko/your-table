@@ -34,7 +34,7 @@ addLayer("rank", {
     baseResource: "points", // Name of resource prestige is based on
     baseResourceEN: "points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.points}, // Get the current amount of baseResource
-    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    type: hasUpgrade("tetr", 11) ? "normal" : "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
@@ -48,7 +48,11 @@ addLayer("rank", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
 	autoPrestige() {return hasUpgrade("tier", 11)},
-	canReset() { return true },
+	passiveGeneration() {
+		if (hasUpgrade("tetr", 11)) return 1;
+		return 0;
+	},
+	canReset() { return hasUpgrade("tetr", 11) ? false : true },
     layerShown(){return true},
 })
 addLayer("tier", {
@@ -68,7 +72,7 @@ addLayer("tier", {
     baseResourceEN: "Rank", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.rank.points}, // Get the current amount of baseResource
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.55, // Prestige currency exponent
+    exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -90,6 +94,22 @@ addLayer("tier", {
             		descriptionEN: "You can now automatically Rank up",
             		cost: new Decimal(1),
             		unlocked() { return true},
+			style: {
+				"width": "120px",
+				"height": "100px"
+			},
+		},
+		12: {
+			title: "Tier upgrade 12",
+			titleEN: "Tier upgrade 12",
+            		description: "You can now Tetr up!",
+            		descriptionEN: "You can now Tetr up!",
+            		cost: new Decimal(5),
+            		unlocked() { return true},
+			style: {
+				"width": "120px",
+				"height": "100px"
+			},
 		},
 	},
 	canReset() { return true },
@@ -108,11 +128,11 @@ addLayer("tetr", {
     requires: new Decimal(10).mul(new Decimal(1.2).pow(2)).floor(), // Can be a function that takes requirement increases into account
     resource: "Tetr", // Name of prestige currency
     resourceEN: "Tetr", // The second name of prestige currency ( If you open otherLanguageMod )
-    baseResource: "Tetr", // Name of resource prestige is based on
-    baseResourceEN: "Tetr", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseResource: "Tier", // Name of resource prestige is based on
+    baseResourceEN: "Tier", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.tier.points}, // Get the current amount of baseResource
     type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.6, // Prestige currency exponent
+    exponent: 0.7, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
@@ -124,6 +144,22 @@ addLayer("tetr", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
+	upgrades: {
+        	rows: 5,
+        	cols: 5,
+		11: {
+			title: "Tetr upgrade 11",
+			titleEN: "Tetr upgrade 11",
+            		description: "You can now automatically Tier up",
+            		descriptionEN: "You can now automatically Tier up",
+            		cost: new Decimal(1),
+            		unlocked() { return true},
+			style: {
+				"width": "120px",
+				"height": "100px"
+			},
+		},
+	},
 	canReset() { return true },
     layerShown(){return hasUpgrade("tier", 12)},
 })
