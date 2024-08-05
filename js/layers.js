@@ -26,6 +26,7 @@ addLayer("rank", {
     startData() { return {
         unlocked: true,
 		points: new Decimal(0),
+	    multiplier: new Decimal(1),
     }},
     color: "#84e600",
     requires: new Decimal(100), // Can be a function that takes requirement increases into account
@@ -49,12 +50,11 @@ addLayer("rank", {
     ],
 	autoPrestige() {return hasUpgrade("tier", 11)},
 	passiveGeneration() {
-		let g = new Decimal(0),
-			h = new Decimal(1);
+		let g = new Decimal(0);
 		if (hasUpgrade("rank", 11)) g = new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1)).mul(5);
 		if (hasUpgrade("pent", 12)) g = new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1));
 		if (hasUpgrade("tetr", 11)) g = new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1);
-		return g.mul(h);
+		return g.mul(player.rank.multiplier);
 	},
 	canReset() {
 		return true;
@@ -89,8 +89,7 @@ addLayer("rank", {
                    player[this.layer].buyables[this.id] = player[this.layer].buyables[this.id].add(1)
                },
 			  effect(){
-				  h = h.mul(1.8);
-				  return h;
+				  player.rank.multiplier = player.rank.multiplier.mul(1.6);
 			  },
 			  unlocked(){
 				  return true;
