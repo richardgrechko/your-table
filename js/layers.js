@@ -96,7 +96,7 @@ addLayer("rank", {
 			},
                buy() { 
                    player[this.layer].buyables[this.id] = player[this.layer].buyables[this.id].add(1)
-				  player.rank.rmult = player.rank.rmult.mul(1.6);
+				  player.rank.rmult = Decimal.pow(1.5, player[this.layer].buyables[this.id]);
                },
 			  effect(){
 				  return player.rank.rmult;
