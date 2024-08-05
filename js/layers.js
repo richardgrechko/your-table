@@ -34,7 +34,7 @@ addLayer("rank", {
     baseResource: "points", // Name of resource prestige is based on
     baseResourceEN: "points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
     baseAmount() {return player.points}, // Get the current amount of baseResource
-    type: hasUpgrade("tetr", 11) ? "normal" : "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
@@ -52,7 +52,7 @@ addLayer("rank", {
 		if (hasUpgrade("tetr", 11)) return 1;
 		return 0;
 	},
-	canReset() { return hasUpgrade("tetr", 11) ? false : true },
+	canReset() { return true },
     layerShown(){return true},
 })
 addLayer("tier", {
