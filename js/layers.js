@@ -2,8 +2,8 @@ addLayer("0layer small", {// Add a * small* to generate a slightly different lay
     name: "sideLayer0",
     position: -1,
     row: 0,
-    symbol() {return (options.ch || modInfo.languageMod==false) ? '[ ??? ]' : '[ Universe ]'},
-    symbolEN() {return (options.ch || modInfo.languageMod==false) ? '[ ??? ]' : '[ Universe ]'},
+    symbol() {return (options.ch || modInfo.languageMod==false) ? '[ ??? ]' : '[ Normal Universe ]'},
+    symbolEN() {return (options.ch || modInfo.languageMod==false) ? '[ ??? ]' : '[ Normal Universe ]'},
     nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
     startData() { return {
         unlocked: true,
@@ -20,8 +20,8 @@ addLayer("0layer small", {// Add a * small* to generate a slightly different lay
 })
 addLayer("rank", {
     name: "rank", // This is optional, only used in a few places, If absent it just uses the layer id
-    symbol: "rank", // This appears on the layer's node. Default is the id with the first letter capitalized
-    symbolEN: "rank", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    symbol: "Rank", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "Rank", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
@@ -49,6 +49,7 @@ addLayer("rank", {
     ],
 	autoPrestige() {return hasUpgrade("tier", 11)},
 	passiveGeneration() {
+		if (hasUpgrade("pent", 12)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1));
 		if (hasUpgrade("tetr", 11)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1);
 		return new Decimal(0);
 	},
@@ -63,8 +64,8 @@ addLayer("rank", {
 })
 addLayer("tier", {
     name: "tier", // This is optional, only used in a few places, If absent it just uses the layer id
-    symbol: "tier", // This appears on the layer's node. Default is the id with the first letter capitalized
-    symbolEN: "tier", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    symbol: "Tier", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "Tier", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
@@ -109,9 +110,18 @@ addLayer("tier", {
             		cost: new Decimal(5),
             		unlocked() { return true},
 		},
+		13: {
+			title: "Tier upgrade 13",
+			titleEN: "Tier upgrade 13",
+            		description: "You can now Tetr up!",
+            		descriptionEN: "You can now Tetr up!",
+            		cost: new Decimal(50),
+            		unlocked() { return true},
+		},
 	},
 	passiveGeneration() {
-		if (hasUpgrade("tetr", 12)) return new Decimal(1).mul(player.tier.points.root(5));
+		if (hasUpgrade("pent", 13)) return new Decimal(1).mul(player.tier.points.root(5)).add(1).mul(player.tetr.points.root(5).add(1));
+		if (hasUpgrade("tetr", 12)) return new Decimal(1).mul(player.tier.points.root(5)).add(1);
 		return new Decimal(0);
 	},
 	autoPrestige() {return hasUpgrade("tetr", 11)},
@@ -120,8 +130,8 @@ addLayer("tier", {
 })
 addLayer("tetr", {
     name: "tetr", // This is optional, only used in a few places, If absent it just uses the layer id
-    symbol: "tetr", // This appears on the layer's node. Default is the id with the first letter capitalized
-    symbolEN: "tetr", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    symbol: "Tetr", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "Tetr", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
@@ -161,9 +171,33 @@ addLayer("tetr", {
 		12: {
 			title: "Tetr upgrade 12",
 			titleEN: "Tetr upgrade 12",
-            		description: "You can now passivly generate Tiers",
-            		descriptionEN: "You can now passivly generate Tiers",
+            		description: "You can now passively generate Tiers",
+            		descriptionEN: "You can now passively generate Tiers",
             		cost: new Decimal(10),
+            		unlocked() { return true},
+		},
+		13: {
+			title: "Tetr upgrade 13",
+			titleEN: "Tetr upgrade 13",
+            		description: "You can now Rebirth",
+            		descriptionEN: "You can now Rebirth",
+            		cost: new Decimal(20),
+            		unlocked() { return true},
+		},
+		21: {
+			title: "Tetr upgrade 21",
+			titleEN: "Tetr upgrade 21",
+            		description: "You can now passively generate Rebirths",
+            		descriptionEN: "You can now passively generate Rebirths",
+            		cost: new Decimal(1000),
+            		unlocked() { return true},
+		},
+		22: {
+			title: "Tetr upgrade 22",
+			titleEN: "Tetr upgrade 22",
+            		description: "You can now automatically Rebirth",
+            		descriptionEN: "You can now automatically Rebirth",
+            		cost: new Decimal(4999),
             		unlocked() { return true},
 		},
 	},
@@ -172,8 +206,8 @@ addLayer("tetr", {
 })
 addLayer("pent", {
     name: "pent", // This is optional, only used in a few places, If absent it just uses the layer id
-    symbol: "pent", // This appears on the layer's node. Default is the id with the first letter capitalized
-    symbolEN: "pent", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    symbol: "Pent", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "Pent", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
@@ -210,6 +244,38 @@ addLayer("pent", {
             		cost: new Decimal(1),
             		unlocked() { return true},
 		},
+		12: {
+			title: "Pent upgrade 12",
+			titleEN: "Pent upgrade 12",
+            		description: "Rank generation is x"+format(player.tetr.points.root(3).add(1))+" better",
+            		descriptionEN: "Rank generation is x"+format(player.tetr.points.root(3).add(1))+" better",
+            		cost: new Decimal(5),
+            		unlocked() { return true},
+		},
+		13: {
+			title: "Pent upgrade 13",
+			titleEN: "Pent upgrade 13",
+            		description: "Tier generation is x"+format(player.tetr.points.root(5).add(1))+" better",
+            		descriptionEN: "Tier generation is x"+format(player.tetr.points.root(5).add(1))+" better",
+            		cost: new Decimal(10),
+            		unlocked() { return true},
+		},
+		21: {
+			title: "Pent upgrade 21",
+			titleEN: "Pent upgrade 21",
+            		description: "Tetr boosts itself",
+            		descriptionEN: "Tetr boosts itself",
+            		cost: new Decimal(40),
+            		unlocked() { return true},
+		},
+		22: {
+			title: "Pent upgrade 22",
+			titleEN: "Pent upgrade 22",
+            		description: "You can now passively generate Pent",
+            		descriptionEN: "You can now passively generate Pent",
+            		cost: new Decimal(100),
+            		unlocked() { return true},
+		},
 	},
 	canReset() { return true },
     layerShown(){return hasUpgrade("tier", 12) || true},
@@ -233,4 +299,68 @@ addLayer("1layer small", {// Add a * small* to generate a slightly different lay
 	tabFormat: [
         ["display-text", function() { return getPointsDisplay() }]
     ],
+})
+
+addLayer("2layer small", {// Add a * small* to generate a slightly different layer
+    name: "sideLayer2",
+    position: -1,
+    row: 8,
+    symbol() {return (options.ch || modInfo.languageMod==false) ? '[ ??? ]' : '[ Rebirths ]'},
+    symbolEN() {return (options.ch || modInfo.languageMod==false) ? '[ ??? ]' : '[ Rebirths ]'},
+    nodeStyle: {"font-size": "15px", "text-center": "center", "height": "30px"},
+    startData() { return {
+        unlocked: true,
+        small: true,
+        points: new Decimal(0),// This actually does nothing, but you have to write this. (Unless you want add something in this layer. #Todo, might change that later.)
+    }},
+    color: "#fefefe",
+    type: "none",
+    tooltip(){return false},
+    layerShown(){return true/*layerDisplayTotal(['rebirth'])*/},// If any layer in the array is unlocked, it will returns true. Otherwise it will return false.
+	tabFormat: [
+        ["display-text", function() { return getPointsDisplay() }]
+    ],
+})
+addLayer("rebirth", {
+    name: "rebirth", // This is optional, only used in a few places, If absent it just uses the layer id
+    symbol: "Rebirth", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbolEN: "Rebirth", // The second name of this appears on the layer's node ( If you open otherLanguageMod )
+    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0),
+    }},
+    color: "#64c3ff",
+    requires: new Decimal(1e15), // Can be a function that takes requirement increases into account
+    resource: "Rebirths", // Name of prestige currency
+    resourceEN: "Rebirths", // The second name of prestige currency ( If you open otherLanguageMod )
+    baseResource: "points", // Name of resource prestige is based on
+    baseResourceEN: "points", // The second name of resource prestige is based on ( If you open otherLanguageMod )
+    baseAmount() {return player.points}, // Get the current amount of baseResource
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 1, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: 9, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+	autoPrestige() {return hasUpgrade("tetr", 21)},
+	passiveGeneration() {
+		if (hasUpgrade("tetr", 20)) return new Decimal(1).mul(player.rebirth.points.root(6)).mul(player.tetr.points.root(4)).add(1);
+		return new Decimal(0);
+	},
+	canReset() {
+		return true;
+	},
+	resetsNothing() {
+		if (hasUpgrade("tetr", 12)) return true;
+		return false;
+	},
+    layerShown(){return hasUpgrade("tetr", 13) || true},
 })
