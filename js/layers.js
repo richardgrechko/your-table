@@ -70,7 +70,16 @@ addLayer("rank", {
 			title(){
 				return "<h3>more rank gain!!!</h3>";
 			},
+			titleEN(){
+				return "<h3>more rank gain!!!</h3>";
+			},
 			display(){
+				let data = tmp[this.layer].buyables[this.id];
+				return "Level: "+format(player[this.layer].buyables[this.id])+"<br>"+
+				"You gain "+format(data.effect)+"x more ranks<br>"+
+				"Cost for the next level: Rank "+format(data.cost);
+			},
+			displayEN(){
 				let data = tmp[this.layer].buyables[this.id];
 				return "Level: "+format(player[this.layer].buyables[this.id])+"<br>"+
 				"You gain "+format(data.effect)+"x more ranks<br>"+
