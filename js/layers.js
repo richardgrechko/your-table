@@ -99,6 +99,7 @@ addLayer("rank", {
                },
 			  effect(){
 				  player.rank.multiplier = player.rank.multiplier.mul(1.6);
+				  return player.rank.multiplier;
 			  },
 			  unlocked(){
 				  return true;
@@ -207,6 +208,10 @@ addLayer("tier", {
 	},
 	autoPrestige() {return hasUpgrade("tetr", 11)},
 	canReset() { return true },
+	resetsNothing() {
+		if (hasUpgrade("pent", 13)) return true;
+		return false;
+	},
     layerShown(){return true},
 })
 addLayer("tetr", {
