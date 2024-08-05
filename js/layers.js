@@ -26,7 +26,7 @@ addLayer("rank", {
     startData() { return {
         unlocked: true,
 		points: new Decimal(0),
-	    multiplier: new Decimal(1),
+	    rmult: new Decimal(1),
     }},
     color: "#84e600",
     requires: new Decimal(100), // Can be a function that takes requirement increases into account
@@ -54,7 +54,7 @@ addLayer("rank", {
 		if (hasUpgrade("rank", 11)) g = new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1)).mul(5);
 		if (hasUpgrade("pent", 12)) g = new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1));
 		if (hasUpgrade("tetr", 11)) g = new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1);
-		return g.mul(player.rank.multiplier);
+		return g.mul(player.rank.rmult);
 	},
 	canReset() {
 		return true;
@@ -98,8 +98,8 @@ addLayer("rank", {
                    player[this.layer].buyables[this.id] = player[this.layer].buyables[this.id].add(1)
                },
 			  effect(){
-				  player.rank.multiplier = player.rank.multiplier.mul(1.6);
-				  return player.rank.multiplier;
+				  player.rank.rmult = player.rank.rmult.mul(1.6);
+				  return player.rank.rmult;
 			  },
 			  unlocked(){
 				  return true;
