@@ -53,8 +53,11 @@ addLayer("rank", {
 		return new Decimal(0);
 	},
 	canReset() {
-		if (hasUpgrade("tetr", 12)) return false;
 		return true;
+	},
+	resetsNothing() {
+		if (hasUpgrade("tetr", 12)) return true;
+		return false;
 	},
     layerShown(){return true},
 })
