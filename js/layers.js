@@ -179,7 +179,7 @@ addLayer("pent", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#cc0066",
+    color: "#cc3800",
     requires: new Decimal(10).mul(new Decimal(1.2).pow(3)).floor(), // Can be a function that takes requirement increases into account
     resource: "Pent", // Name of prestige currency
     resourceEN: "Pent", // The second name of prestige currency ( If you open otherLanguageMod )
