@@ -49,8 +49,8 @@ addLayer("rank", {
     ],
 	autoPrestige() {return hasUpgrade("tier", 11)},
 	passiveGeneration() {
-		if (hasUpgrade("pent", 12)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1));
-		if (hasUpgrade("tetr", 11)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1);
+		if (hasUpgrade("pent", 12)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.sqrt()).add(1).mul(player.tetr.points.root(3).add(1));
+		if (hasUpgrade("tetr", 11)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.sqrt()).add(1);
 		return new Decimal(0);
 	},
 	canReset() {
