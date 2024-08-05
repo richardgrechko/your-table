@@ -49,7 +49,7 @@ addLayer("rank", {
     ],
 	autoPrestige() {return hasUpgrade("tier", 11)},
 	passiveGeneration() {
-		if (hasUpgrade("tetr", 11)) return new Decimal(1).mul(player.rank.points.root(4));
+		if (hasUpgrade("tetr", 11)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1);
 		return new Decimal(0);
 	},
 	canReset() {
