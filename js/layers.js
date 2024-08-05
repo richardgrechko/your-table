@@ -49,8 +49,8 @@ addLayer("rank", {
     ],
 	autoPrestige() {return hasUpgrade("tier", 11)},
 	passiveGeneration() {
-		if (hasUpgrade("pent", 12)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.sqrt()).add(1).mul(player.tetr.points.root(3).add(1));
-		if (hasUpgrade("tetr", 11)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.sqrt()).add(1);
+		if (hasUpgrade("pent", 12)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1).mul(player.tetr.points.root(3).add(1));
+		if (hasUpgrade("tetr", 11)) return new Decimal(1).mul(player.rank.points.root(4)).mul(player.pent.points.root(2)).add(1);
 		return new Decimal(0);
 	},
 	canReset() {
@@ -247,16 +247,16 @@ addLayer("pent", {
 		12: {
 			title: "Pent upgrade 12",
 			titleEN: "Pent upgrade 12",
-            		description: "Rank generation is x"+format(player.tetr.points.root(3).add(1))+" better",
-            		descriptionEN: "Rank generation is x"+format(player.tetr.points.root(3).add(1))+" better",
+            		description: "Rank generation is better",
+            		descriptionEN: "Rank generation is better",
             		cost: new Decimal(5),
             		unlocked() { return true},
 		},
 		13: {
 			title: "Pent upgrade 13",
 			titleEN: "Pent upgrade 13",
-            		description: "Tier generation is x"+format(player.tetr.points.root(5).add(1))+" better",
-            		descriptionEN: "Tier generation is x"+format(player.tetr.points.root(5).add(1))+" better",
+            		description: "Tier generation is better",
+            		descriptionEN: "Tier generation is better",
             		cost: new Decimal(10),
             		unlocked() { return true},
 		},
