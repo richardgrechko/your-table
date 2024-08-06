@@ -448,5 +448,24 @@ addLayer("rebirth", {
 		if (hasUpgrade("tetr", 12)) return true;
 		return false;
 	},
+	milestones: [
+		{
+			requirementDescription: "1 Rebirth",
+			requirementDescriptionEN: "1 Rebirth",
+			unlocked() { return true },
+			done() { return player.rebirth.points.gte(1) },
+			effectDescription: function(){
+				return "Based on total fixed corruptions amount, add +"+format(tmp.cm.cMilestone1Effect,4)+" per prestige milestone to Corruption Upgrade 12 effect"
+			},
+            		style() {
+                		if (hasMilestone('rebirth',0)) return {
+                    			'background':'#00520b',
+                    			'border-color':'lime',
+                    			'color':'lime',
+                    			'width': '100%',
+                		}
+            		}
+		},
+	],
     layerShown(){return hasUpgrade("tetr", 13) || true},
 })
